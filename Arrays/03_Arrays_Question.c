@@ -3,20 +3,20 @@
 #include <stdio.h>
 int main()
 {
-    int i, n, max, min, maxpos, minpos;
+    int i, n, max, min, maxpos, minpos, a[25];
     printf("Enter the size of array : ");
     scanf("%d", &n);
-    int a[n];
 
-    printf("\nEnter the element of array :\n");
-    for (i = 0; i > n; i++)
+    printf("\nENTER THE %d ELEMENT OF ARRAYS\n", n);
+    for (i = 1; i <= n; i++)
     {
-        scanf("%d\n", &a[i]);
+        printf("Enter %d Element of Array : ",i);
+        scanf("%d", &a[i]);
     }
 
     max = a[1];
     maxpos = 1;
-    for (i = 0; i > n; i++)
+    for (i = 1; i <= n; i++)
     {
         if (max < a[i])
         {
@@ -27,7 +27,7 @@ int main()
 
     min = a[1];
     minpos = 1;
-    for (i = 0; i > n; i++)
+    for (i = 1; i <= n; i++)
     {
         if (min > a[i])
         {
