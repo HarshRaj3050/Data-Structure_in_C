@@ -3,9 +3,10 @@
 #include <stdio.h>
 int main()
 {
-    int i, n, max, min, maxpos, minpos, a[25];
+    int i, n, max, min, maxpos, minpos;
     printf("Enter the size of array : ");
     scanf("%d", &n);
+    int a[n];
 
     printf("\nENTER THE %d ELEMENT OF ARRAYS\n", n);
     for (i = 1; i <= n; i++)
