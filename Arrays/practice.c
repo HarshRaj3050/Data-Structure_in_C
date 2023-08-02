@@ -3,16 +3,20 @@
 #include <stdio.h>
 int main()
 {
-    int i, arr[5];
-    printf("Input the 5 elements \n");
-    for (i = 1; i < 6; i++)
+    int i,num,arrnum;
+    printf("Enter the array size : ");
+    scanf("%d", &num);
+    int arr[arrnum];
+    printf("Input the %d elements \n", num);
+    num = num + 1;
+    for (i = 1; i < num; i++)
     {
         printf("%d. Enter the element : ", i);
         scanf("%d", &arr[i]);
     }
     printf("\nThe array elements are \n");
     {
-    for (i = 1; i < 6; i++)
+    for (i = 1; i < num; i++)
         printf("%d\n", arr[i]);
     }
     return 0;
