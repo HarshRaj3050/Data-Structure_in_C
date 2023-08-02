@@ -6,6 +6,8 @@ int main()
     int i,num, numarr, max, min, maxpos, minpos;
     printf("Enter the array size : ");
     scanf("%d", &num);
+
+    printf("\nINPUT THE %d ELEMENTS \n", num);
     int arr[num];
     numarr = num + 1;
 
@@ -41,7 +43,7 @@ int main()
 
     printf("\nThe Biggest element of Array is : %d \n", max);
     printf("The Biggest element position is : %d \n", maxpos);
-    printf("\nThe Biggest element of Array is : %d \n", min);
-    printf("The Biggest element position is : %d \n", minpos);
+    printf("\nThe Smallest element of Array is : %d \n", min);
+    printf("The Smallest element position is : %d \n", minpos);
     return 0;
 }
