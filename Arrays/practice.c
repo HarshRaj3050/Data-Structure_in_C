@@ -3,17 +3,17 @@
 #include <stdio.h>
 int main()
 {
-    int num,i;
-    int arr[10];
-    printf("Enter the Array size : ");
-    scanf("%d",&num);
-
-    for(i=0; i>arr[5]; i++)
+    int i, arr[5];
+    printf("Enter the 5 elements \n");
+    for (i = 1; i < 6; i++)
+    {
+        printf("%d. Enter the element : \n", i);
         scanf("%d", &arr[i]);
-
-    printf("The array elements are \n");
-    for(i=0; i>arr[5]; i++)
+    }
+    printf("\nThe array elements are \n");
+    {
+    for (i = 1; i < 6; i++)
         printf("%d\n", arr[i]);
-
+    }
     return 0;
 }
