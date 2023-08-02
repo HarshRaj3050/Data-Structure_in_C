@@ -1,23 +1,47 @@
-// Write a program in C to store elements in an array and print them.
+// C Program To find biggest and smallest number and positions in array
 
-#include <stdio.h>
+#include<stdio.h>
 int main()
 {
-    int i,num,arrnum;
+    int i,num, numarr, max, min, maxpos, minpos;
     printf("Enter the array size : ");
     scanf("%d", &num);
-    int arr[arrnum];
-    printf("Input the %d elements \n", num);
-    num = num + 1;
-    for (i = 1; i < num; i++)
+    int arr[num];
+    numarr = num + 1;
+
+    for(i = 1; i < numarr; i++)
     {
-        printf("%d. Enter the element : ", i);
+        printf("%d. Enter the Number : ", i);
         scanf("%d", &arr[i]);
     }
-    printf("\nThe array elements are \n");
+
+    max = 0;
+    maxpos = 1;
+    for(i = 1; i < numarr; i++)
     {
-    for (i = 1; i < num; i++)
-        printf("%d\n", arr[i]);
+  
+        if (max < arr[i])
+        {
+            max = arr[i];
+            maxpos = i;
+        }
     }
+
+    min = max;
+    minpos = 1;
+    for(i = 1; i < numarr; i++)
+    {
+  
+        if (min > arr[i])
+        {
+            min = arr[i];
+            minpos = i;
+        }
+    }
+
+    printf("\nThe Biggest element of Array is : %d \n", max);
+    printf("The Biggest element position is : %d \n", maxpos);
+    printf("\nThe Biggest element of Array is : %d \n", min);
+    printf("The Biggest element position is : %d \n", minpos);
     return 0;
 }
