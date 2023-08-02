@@ -4,10 +4,10 @@
 int main()
 {
     int i, arr[5];
-    printf("Enter the 5 elements \n");
+    printf("Input the 5 elements \n");
     for (i = 1; i < 6; i++)
     {
-        printf("%d. Enter the element : \n", i);
+        printf("%d. Enter the element : ", i);
         scanf("%d", &arr[i]);
     }
     printf("\nThe array elements are \n");
