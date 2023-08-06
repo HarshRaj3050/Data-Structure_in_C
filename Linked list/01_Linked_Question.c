@@ -25,18 +25,26 @@ int main()
     node *third;
     node *fourth;
 
+// Allocate memory for nodes in the linked list in Heap
     head = (node *)malloc(sizeof(node));
     second = (node *)malloc(sizeof(node));
     third = (node *)malloc(sizeof(node));
     fourth = (node *)malloc(sizeof(node));
 
-    head->data = 17;
+    // Link first and second nodes
+    head->data = 64;
     head->next = second;
-    second->data = 19;
+ 
+    // Link second and third nodes
+    second->data = 32;
     second->next = third;
-    third->data = 41;
+ 
+    // Link third and fourth nodes
+    third->data = 63;
     third->next = fourth;
-    fourth->data = 79;
+ 
+    // Terminate the list at the third node
+    fourth->data = 13;
     fourth->next = NULL;
 
     linkedlistTraversal(head);
