@@ -9,14 +9,21 @@ typedef struct node
     struct node *next;
 }node;
 
-void linkedlistTrabersing(node *ptr)
+void LinkedListTraversion(node *ptr)
 {
     while (ptr != NULL)
     {
-        printf("element : %d\n", ptr->data);
+        printf("Element : %d\n", ptr->data);
         ptr = ptr->next;
     }
-    
+}
+
+node *inserted(node *head, int data)
+{
+    node *ptr = (node *)malloc(sizeof(node));
+    ptr->data = data;
+    ptr->next = head;
+    return ptr;
 }
 
 int main()
@@ -31,19 +38,23 @@ int main()
     third = (node *)malloc(sizeof(node));
     fourth = (node *)malloc(sizeof(node));
 
-    head->data = 64;
+    head->data = 56;
     head->next = second;
 
-    second->data = 57;
+    second->data = 62;
     second->next = third;
 
-    third->data = 76;
+    third->data = 35;
     third->next = fourth;
 
     fourth->data = 26;
     fourth->next = NULL;
-
-    linkedlistTrabersing(head);
+    
+    printf("\nBefore Insert\n");
+    LinkedListTraversion(head);
+    head = inserted(head, 58);
+    printf("\nAfter Insert\n");
+    LinkedListTraversion(head);
 
     return 0;
 }
