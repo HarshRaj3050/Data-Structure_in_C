@@ -32,6 +32,7 @@ int main()
     node *third;
     node *fourth;
 
+// Allocate memory for nodes in the linked list in Heap
     head = (node *)malloc(sizeof(node));
     second = (node *)malloc(sizeof(node));
     third = (node *)malloc(sizeof(node));
