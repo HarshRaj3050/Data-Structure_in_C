@@ -55,22 +55,36 @@ int main()
     third = (node *)malloc(sizeof(node));
     fourth = (node *)malloc(sizeof(node));
 
-    head->data = 56;
+    printf("\n-----------Create a Linked-List-----------\n");
+    printf("\nEnter the 4 Element\n");
+
+    int a[5], num;
+    for(int i=0; i<4; i++)
+    {
+        printf("%d. Enter the element : ", i+1);
+        scanf("%d", &a[i]);
+    }
+
+    head->data = a[0];
     head->next = second;
 
-    second->data = 62;
+    second->data = a[1];
     second->next = third;
 
-    third->data = 35;
+    third->data = a[2];
     third->next = fourth;
 
-    fourth->data = 26;
+    fourth->data = a[3];
     fourth->next = NULL;
 
-    printf("\nBefore Insert\n");
+    printf("\n----Before Insert----\n");
     LinkedListTraversion(head);
-    head = insertedIndex(head, 58, 2);
-    printf("\nAfter Insert\n");
+
+    printf("\nEnter the element to Inserted the second Index : ");
+    scanf("%d", &num);
+
+    head = insertedIndex(head, num, 2);
+    printf("\n----After Insert----\n");
     LinkedListTraversion(head);
 
     return 0;
