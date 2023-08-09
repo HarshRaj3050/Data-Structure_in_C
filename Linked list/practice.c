@@ -1,5 +1,3 @@
-// Creating and traversing in a linked list
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -9,30 +7,37 @@ typedef struct node
     struct node *next;
 } node;
 
-void LinkedListTraversion(node *ptr)
+void CircularLInkedList(node *head)
 {
-    while (ptr != NULL)
+    node *ptr = head;
+    do
     {
         printf("Element : %d\n", ptr->data);
         ptr = ptr->next;
-    }
+    } while (ptr != head);
 }
 
-node *inserted(node *head, int data)
+node *insertion(node *head, int data)
 {
     node *ptr = (node *)malloc(sizeof(node));
+    node *p = head->next;
     ptr->data = data;
+
+    while(p->next != head)
+    {
+        p = p->next;
+    }
+    p->next = ptr;
     ptr->next = head;
-    return ptr;
+    return head;
 }
 
-node *insertedIndex(node *head, int data, int index)
+node *inbetween(node *head, int data, int index)
 {
     node *ptr = (node *)malloc(sizeof(node));
     node *p = head;
-
     int i = 0;
-    while (i != index-1)
+    while(i != index-1)
     {
         p = p->next;
         i++;
@@ -41,6 +46,7 @@ node *insertedIndex(node *head, int data, int index)
     ptr->next = p->next;
     p->next = ptr;
     return head;
+
 }
 
 int main()
@@ -50,42 +56,28 @@ int main()
     node *third;
     node *fourth;
 
+    // Allocate memory for nodes in the linked list in Heap
     head = (node *)malloc(sizeof(node));
     second = (node *)malloc(sizeof(node));
     third = (node *)malloc(sizeof(node));
     fourth = (node *)malloc(sizeof(node));
 
-    printf("\n-----------Create a Linked-List-----------\n");
-    printf("\nEnter the 4 Element\n");
-
-    int a[5], num;
-    for(int i=0; i<4; i++)
-    {
-        printf("%d. Enter the element : ", i+1);
-        scanf("%d", &a[i]);
-    }
-
-    head->data = a[0];
+    head->data = 74;
     head->next = second;
 
-    second->data = a[1];
+    second->data = 46;
     second->next = third;
 
-    third->data = a[2];
+    third->data = 24;
     third->next = fourth;
 
-    fourth->data = a[3];
-    fourth->next = NULL;
+    fourth->data = 33;
+    fourth->next = head;
 
-    printf("\n----Before Insert----\n");
-    LinkedListTraversion(head);
-
-    printf("\nEnter the element to Inserted the second Index : ");
-    scanf("%d", &num);
-
-    head = insertedIndex(head, num, 2);
-    printf("\n----After Insert----\n");
-    LinkedListTraversion(head);
-
+    printf("\n-----Before Insertion-----\n");
+    CircularLInkedList(head);
+    head = inbetween(head, 99, 2);
+    printf("\n-----After Insertion-----\n");
+    CircularLInkedList(head);
     return 0;
 }
