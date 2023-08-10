@@ -19,6 +19,21 @@ void LinkedListTravertion(node *head)
     } while (ptr != head);
 }
 
+node * insertion(node *head, int data)
+{
+    node *ptr = (node *)malloc(sizeof(node));
+    node *p = head;
+    while(p->next != head)
+    {
+        p = p->next;
+    }
+    ptr->data = data;
+    p->next = ptr;
+    ptr->next = head;
+    head = ptr;
+    return head;
+}
+
 int main()
 {
     node *head;
@@ -43,7 +58,10 @@ int main()
     fourth->data = 69;
     fourth->next = head;
 
+    printf("\n-----Before Insertion-----\n");
     LinkedListTravertion(head);
-
+    head = insertion(head, 99);
+    printf("\n-----After Insertion-----\n");
+    LinkedListTravertion(head);
     return 0;
 }
