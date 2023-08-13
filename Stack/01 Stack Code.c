@@ -39,9 +39,7 @@ int main()
     s->top = -1;
     s->arr = (int *)malloc(s->size * sizeof(int));
 
-    int head = isEmpty(s);
-
-    if(head==1)
+    if(isEmpty(s))
     {
         printf("This stack is empty");
     }
