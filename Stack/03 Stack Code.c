@@ -71,6 +71,7 @@ int main()
     push(sp, 52);
     push(sp, 25);
     push(sp, 63);
+    push(sp, 85);    
 
     printf("Popped %d from the stack\n", pop(sp));
     printf("Popped %d from the stack\n", pop(sp));
