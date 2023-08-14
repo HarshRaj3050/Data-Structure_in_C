@@ -1,3 +1,5 @@
+// Implementing isEmpty and  isFull.
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -22,7 +24,7 @@ int isEmpty(stack *ptr)
 
 int isFull(stack *ptr)
 {
-    if(ptr->top == ptr->size - 1)
+    if (ptr->top == ptr->size - 1)
     {
         return 1;
     }
@@ -39,7 +41,7 @@ int main()
     s->top = -1;
     s->arr = (int *)malloc(s->size * sizeof(int));
 
-    if(isEmpty(s))
+    if (isEmpty(s))
     {
         printf("This stack is empty");
     }
