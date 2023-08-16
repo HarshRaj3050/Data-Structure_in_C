@@ -1,0 +1,2 @@
+// Implementing isEmpty and  isFull.
+
