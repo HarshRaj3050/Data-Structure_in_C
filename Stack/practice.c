@@ -10,6 +10,24 @@ typedef struct stack
     int *arr;
 }stack;
 
+int isEmpty(stack *ptr)
+{
+    if(ptr == -1)
+    {
+       return 1;
+    }
+    return 0;
+}
+
+int isFull(stack *ptr)
+{
+    if(ptr->top == ptr->size-1)
+    {
+        return 1;
+    }
+    return 0;
+}
+
 int main()
 {
 
