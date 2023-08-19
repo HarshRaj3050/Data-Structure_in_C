@@ -28,6 +28,14 @@ int isFull(stack *ptr)
     return 0;
 }
 
+int push(stack *ptr, int value)
+{
+    if(isFull(ptr))
+    {
+        printf("Stack is Full, %d value cannot be push", value);
+    }
+}
+
 int main()
 {
 
