@@ -32,7 +32,7 @@ void push(stack *ptr, int value)
 {
     if(isFull(ptr))
     {
-        printf("Stack is overflow, %d element is cannot be push");
+        printf("Stack is overflow, %d element is cannot be push", value);
     }
     else
     {

@@ -28,11 +28,17 @@ int isFull(stack *ptr)
     return 0;
 }
 
-int push(stack *ptr, int value)
+void push(stack *ptr, int value)
 {
     if(isFull(ptr))
     {
-        printf("Stack is Full, %d value cannot be push", value);
+        printf("Stack is Overflow, %d value cannot be push", value);
+    }
+    else
+    {
+        ptr->top++;
+        ptr->arr[ptr->top] = value;
+
     }
 }
 
