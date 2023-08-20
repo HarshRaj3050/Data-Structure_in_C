@@ -1,24 +1,24 @@
-#include <stdio.h>
+// Write a program in C to store elements in an array and print them.
 
-int seriesSum(int n)
-{
-    if (n == 0 || n == 1)
-    {
-        return 1;
-    }
-    else
-    {
-        return n + seriesSum(n - 1);
-    }
-}
+#include<stdio.h>
 
 int main()
 {
-    int n, sum;
-    printf("Enter the number : ");
-    scanf("%d", &n);
+    int i,j;
+    printf("\n------------------------------\n");
+    printf("Enter 5 Element\n");
+    int arr[5];
+    for(i=0; i<5; i++)
+    {
+        printf("%d. Enter Number : ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+    printf("------------------------------\n");
+    printf("\nThe Element Are : \n");
+    for(i=0; i<5; i++)
+    {
+        printf("%d\n", arr[i]);
+    }
 
-    sum = seriesSum(n);
-    printf("\nThe sum of all the n intger is : %d", sum);
     return 0;
 }
