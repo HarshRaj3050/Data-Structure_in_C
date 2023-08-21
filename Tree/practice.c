@@ -1,3 +1,5 @@
+// InOrder Traversal in a Binary Tree.
+
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -8,8 +10,7 @@ typedef struct node
     struct node *right;
 } node;
 
-// Creat a Node using function.
-node *creatNode(int data)
+node *createNode(int data)
 {
     node *n = (node *)malloc(sizeof(node));
     n->data = data;
@@ -18,31 +19,42 @@ node *creatNode(int data)
     return n;
 }
 
-// 
-void *preOrder(node *root)
+void inOrder(node *root)
 {
     if(root != NULL)
     {
+        inOrder(root->left);
         printf("%d ", root->data);
-        preOrder(root->left);
-        preOrder(root->right);
+        inOrder(root->right);
     }
 }
 
 int main()
 {
-    node *p = creatNode(6);
-    node *p1 = creatNode(3);
-    node *p2 = creatNode(4);
-    node *p3 = creatNode(8);
-    node *p4 = creatNode(2);
+// Constructing the root node - Using Function (Recommended)
+    node *root = createNode(5);
+    root->left = createNode(3);
+    root->right = createNode(6);
+    root->left->left = createNode(7);
+    root->left->right = createNode(2);
 
-    p->left = p1;
-    p->right = p2;
-    p1->left = p3;
-    p1->right = p4;
 
-    preOrder(p);
+    /* Finally The tree looks like this:
+                5
+               / \
+              3   6
+             / \
+            7   2  
+    */
+   
+    node *root = createNode(5);
+    root->left = createNode(3);
+    root->right = createNode(6);
+    root->left->left = createNode(7);
+    root->left->right = createNode(2);
 
+// Function call
+    printf("Inorder traversal of binary tree is : ");
+    inOrder(root);
     return 0;
 }

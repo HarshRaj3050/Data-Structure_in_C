@@ -52,6 +52,8 @@ int main()
     p1->left = p3;
     p1->right = p4;
 
+// Function call
+    printf("\nInorder traversal of binary tree is : ");
     postOrder(p);
     return 0;
 }
