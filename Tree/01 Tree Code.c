@@ -1,3 +1,5 @@
+// Implementing Binary Trees in C
+
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -11,7 +13,7 @@ typedef struct node
 node * tree(int data)
 {
     node *n = (node *)malloc(sizeof(node)); // Allocating memory in the heap
-    n->data = n; // Setting the data
+    n->data = data; // Setting the data
     n->left = NULL; // Setting the left children to NULL
     n->right = NULL; // Setting the right children to NULL
     return n;
