@@ -53,8 +53,5 @@ int main()
     root->left->left = createNode(7);
     root->left->right = createNode(2);
 
-// Function call
-    printf("Inorder traversal of binary tree is : ");
-    inOrder(root);
-    return 0;
+
 }
