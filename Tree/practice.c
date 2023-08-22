@@ -1,4 +1,4 @@
-// InOrder Traversal in a Binary Tree.
+// PostOrder Traversal in a Binary Tree.
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -19,39 +19,41 @@ node *createNode(int data)
     return n;
 }
 
-void inOrder(node *root)
+void postOrder(node *root)
 {
     if(root != NULL)
     {
-        inOrder(root->left);
+        postOrder(root->left);
+        postOrder(root->right);
         printf("%d ", root->data);
-        inOrder(root->right);
     }
 }
 
 int main()
 {
 // Constructing the root node - Using Function (Recommended)
-    node *root = createNode(5);
-    root->left = createNode(3);
-    root->right = createNode(6);
-    root->left->left = createNode(7);
-    root->left->right = createNode(2);
-
+    node *p = createNode(8);
+    node *p1 = createNode(7);
+    node *p2 = createNode(4);
+    node *p3 = createNode(9);
+    node *p4 = createNode(3);
 
     /* Finally The tree looks like this:
-                5
+                8
                / \
-              3   6
+              7   4
              / \
-            7   2  
+            9   3  
     */
    
-    node *root = createNode(5);
-    root->left = createNode(3);
-    root->right = createNode(6);
-    root->left->left = createNode(7);
-    root->left->right = createNode(2);
+// Linking the root node with left and right children
+    p->left = p1;
+    p->right = p2;
+    p1->left = p3;
+    p1->right = p4;
 
-
+// Function call
+    printf("\nInorder traversal of binary tree is : ");
+    postOrder(p);
+    return 0;
 }
