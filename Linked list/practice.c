@@ -5,42 +5,34 @@ typedef struct node
 {
     int data;
     struct node *next;
-}node;
+} node;
 
-void travertion(node *head)
+void LinkedListTraversal(node *ptr)
 {
-    node *ptr = head;
-    while(ptr!=NULL)
+    while(ptr != NULL)
     {
-        printf("Element : %d\n", ptr->data);
+        printf("element : %d\n", ptr->data);
         ptr = ptr->next;
     }
-    
 }
 
 int main()
 {
-    node *head;
-    node *second;
-    node *third;
-    node *fourth;
-
-    head = (node *)malloc(sizeof(node));
-    second = (node *)malloc(sizeof(node));
-    third = (node *)malloc(sizeof(node));
-    fourth = (node *)malloc(sizeof(node));
+    node *head = (node *)malloc(sizeof(node));
+    node *p1 = (node *)malloc(sizeof(node));
+    node *p2 = (node *)malloc(sizeof(node));
+    node *p3 = (node *)malloc(sizeof(node));
     
-    head->data = 56;
-    head->next = second;
-    second->data = 63;
-    second->next = third;
-    third->data = 34;
-    third->next = fourth;
-    fourth->data = 12;
-    fourth->next = NULL;
+    head->data = 53;
+    head->next = p1;
+    p1->data = 34;
+    p1->next = p2;
+    p2->data = 63;
+    p2->next = p3;
+    p3->data = 83;
+    p3->next = NULL;
 
-    travertion(head);
-
+    LinkedListTraversal(head);
     
     return 0;
 }
