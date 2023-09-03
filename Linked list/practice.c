@@ -31,8 +31,23 @@ node *postorder(node *head, int data)
     ptr->data = data;
     while(p->next != NULL)
         p = p->next; 
-    
     return ptr;
+}
+
+node *Inoder(node *head, int data, int index)
+{
+    node *ptr = (node *)malloc(sizeof(node));
+    node *p = head;
+    int i = 0;
+    while(i != index - 1)
+    {   
+        p = p->next;
+        i++;
+    }
+    ptr->data = data;
+    ptr->next = p->next;
+    p->next = ptr;
+    return head;
 }
 
 int main()
@@ -65,6 +80,8 @@ int main()
     head = postorder(head, 199);
     printf("After Insertion \n");
     LinkedListTraversion(head);
+    printf("\n After Inoder\n");
+    
 
     return 0;
 }
