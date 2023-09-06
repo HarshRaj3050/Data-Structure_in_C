@@ -8,6 +8,11 @@ typedef struct node
     struct node *right;
 }node;
 
+node *createNode(int data)
+{
+    
+}
+
 int main()
 {
     node *root;
