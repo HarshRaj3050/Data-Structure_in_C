@@ -17,6 +17,16 @@ node *createTree(int data)
     return ptr;
 }
 
+void preOrder(node *root)
+{
+    if(root != NULL)
+    {
+        printf("%d ", root->data);
+        preOrder(root->left);
+        preOrder(root->right);
+    }
+}
+
 int main()
 {
     node *root = createTree(64);
@@ -24,6 +34,8 @@ int main()
     root->right = createTree(83);
     root->left->left = createTree(23);
     root->left->right = createTree(31);
+
+    preOrder(root);
 
     return 0;
 }
