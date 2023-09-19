@@ -13,8 +13,8 @@ void LinkedListTraversion(node *head)
     node *ptr = head;
     while(ptr != NULL)
     {
-        printf("Element : %d", ptr->data);
-        ptr->data = ptr->next;
+        printf("Element : %d\n", ptr->data);
+        ptr = ptr->next;
     }
 }
 
@@ -33,15 +33,15 @@ int main()
     head->next = second;
     head->prev = NULL;
 
-    second->data = 52;
+    second->data = 86;
     second->next = third;
     second->prev = head;
 
-    third->data = 52;
+    third->data = 25;
     third->next = fourth;
     third->prev = second;
 
-    fourth->data = 52;
+    fourth->data = 90;
     fourth->next = NULL;
     fourth->prev = third;
 
