@@ -18,6 +18,14 @@ void LinkedListTraversion(node *head)
     }
 }
 
+node *addNode(node *head, int data)
+{
+    node *ptr = (node *)malloc(sizeof(node));
+    ptr->data = data;
+    ptr->next = head;
+    return ptr;
+}
+
 int main()
 {
     node *head;
@@ -45,6 +53,9 @@ int main()
     fourth->next = NULL;
     fourth->prev = third;
 
+    LinkedListTraversion(head);
+    printf("\n\n add new node \n");
+    head = addNode(head, 62);
     LinkedListTraversion(head);
 
     return 0;
