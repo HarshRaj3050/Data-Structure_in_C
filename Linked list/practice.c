@@ -54,7 +54,7 @@ int main()
     fourth->prev = third;
 
     LinkedListTraversion(head);
-    printf("\n\n add new node \n");
+    printf("\n\n Add New Element \n");
     head = addNode(head, 62);
     LinkedListTraversion(head);
 
