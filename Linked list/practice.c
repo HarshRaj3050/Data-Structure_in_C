@@ -19,15 +19,23 @@ void LinkedListTraversal(node *head)
     }
 }
 
-int main()
+int array(num)
 {
-
-int a[5];
-    for(int i=0; i>5; i++)
+    int i=0,a[5];
+    while(i>5)
     {
         printf("%d. Enter the number to insert the LinkedList : \n", i+1);
         scanf("%d", &a[i]);
+        i++;
     }
+    return a[num];
+}
+
+int main()
+{
+
+    int num[5];
+    num[5] = array(num);
 
     node *head;
     node *second;
@@ -40,16 +48,16 @@ int a[5];
     fourth = (node *)malloc(sizeof(node));
 
 
-    head->data = a[0];
+    head->data = num[0];
     head->next = second;
 
-    second->data = a[1];
+    second->data = num[1];
     second->next = third;
 
-    third->data = a[2];
+    third->data = num[2];
     third->next = fourth;
     
-    fourth->data = a[3];
+    fourth->data = num[3];
     fourth->next = NULL;
     
     printf("----- The all the Linked List Element are ------\n");
