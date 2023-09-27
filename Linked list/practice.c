@@ -9,6 +9,16 @@ typedef struct node
     struct node *next;
 }node;
 
+void LinedListTraversion(node *head)
+{
+    node *ptr = head;
+    while(ptr != NULL)
+    {
+        printf("Element : %d\n", ptr->data);
+        ptr = ptr->next;
+    }
+}
+
 int main()
 {
     node *head = (node *)malloc(sizeof(node));
@@ -28,7 +38,7 @@ int main()
     fourth->data = 93;
     fourth->next = NULL;
 
-
+    LinedListTraversion(head);
 
     return 0;
 }
